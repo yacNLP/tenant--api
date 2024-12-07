@@ -8,8 +8,8 @@ This repository contains a Node.js script to fetch and compare statistics from a
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/yacNLP/tenants-api.git
+cd tenants-api
 ```
 
 ### 2. Install Dependencies
@@ -21,7 +21,7 @@ npm install
 Create a `.env` file in the root directory and add the following:
 ```env
 API_URL= [URL]
-TOKEN=Bearer [YOUR_ACCESS_TOKEN]
+TOKEN= [YOUR_ACCESS_TOKEN]
 ```
 Replace `YOUR_ACCESS_TOKEN` & `URL` with a valid ones
 
