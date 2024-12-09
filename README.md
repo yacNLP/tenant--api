@@ -34,5 +34,5 @@ node db/createTables.js
 
 ### Fetch and insert data
 ```bash
-node node index.js
+node index.js
 ```
