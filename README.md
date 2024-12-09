@@ -1,46 +1,38 @@
-# API Fetcher for Statistics Comparison
+# Branch: Fetch and Insert Data to Database
 
-This repository contains a Node.js script to fetch and compare statistics from a REST API. The script calculates specific dates and sends them to the API endpoint to retrieve and display analytics data.
+This branch configures the project to:
 
----
+1. **Fetch data**: Use an API to retrieve statistics for tenants (stores or headquarters).
+2. **Insert data**: Store the retrieved data into a PostgreSQL relational database.
 
-## Setup Instructions
+## Features
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yacNLP/tenants-api.git
-cd tenants-api
-```
+- Fetching data from an API.
+- Validating and mapping the data to the database table structure.
+- Inserting data into relational tables:
+  - `tenants`
+  - `tenant_child_ids`
+  - `tenant_statistics`
+- Handling errors during data insertion.
 
-### 2. Install Dependencies
+## Prerequisites
+
+- A configured PostgreSQL database with the required tables.
+- Environment variables set in a `.env` file for database connectivity.
+
+## Key Commands
+
+### Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Configure Environment Variables
-Create a `.env` file in the root directory and add the following:
-```env
-API_URL= [URL]
-TOKEN= [YOUR_ACCESS_TOKEN]
-```
-Replace `YOUR_ACCESS_TOKEN` & `URL` with a valid ones
-
----
-
-## Run the Script
+### Create database tables
 ```bash
-node fetch-tenants-api.js
+node db/createTables.js
 ```
 
-The script will calculate the current date (`BaseDate`) and the same day from the previous year (`ComparisonDate`) before sending a request to the API. The console will display the API response.
-
----
-
-## File Structure
-- `fetch-tenants-api.js`: Main script for fetching and processing data.
-- `.env`: Contains sensitive environment variables 
-
----
-
-## License
-This project is licensed under the MIT License.
+### Fetch and insert data
+```bash
+node node index.js
+```
